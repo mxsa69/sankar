@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sankar Solutions - Mehrsprachig</title>
+  <title>Sankar Solutions</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
     body {
@@ -31,7 +31,6 @@
       position: absolute;
       top: 10px;
       right: 20px;
-      left: auto;
     }
     body[dir="rtl"] .lang-switch {
       right: auto;
@@ -92,13 +91,8 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto" id="navLinks">
+      <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link active" href="#about" data-key="aboutTitle">Über mich</a></li>
-        <li class="nav-item"><a class="nav-link" href="#skills" data-key="skillsTitle">Skills</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects" data-key="projectsTitle">Projekte</a></li>
-        <li class="nav-item"><a class="nav-link" href="#services" data-key="servicesTitle">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="#experience" data-key="experienceTitle">Erfahrung</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact" data-key="contactTitle">Kontakt</a></li>
       </ul>
     </div>
   </div>
@@ -116,49 +110,11 @@
 <main class="container d-flex flex-column align-items-center">
   <div id="about" class="card bg-dark text-light mb-4" tabindex="0">
     <h2 data-key="aboutTitle">Über mich</h2>
-    <p data-key="aboutText">Hi, ich bin Masa, Fachinformatikerin mit Fokus auf Webentwicklung und IT-Projekte. Ich liebe es, komplexe Probleme zu lösen und innovative Software zu bauen. Ob Job oder Freelancer – ich bringe Skills und Motivation mit.</p>
-  </div>
-
-  <div id="skills" class="card bg-dark text-light mb-4" tabindex="0">
-    <h2 data-key="skillsTitle">Skills &amp; Tools</h2>
-    <ul data-key="skillsList">
-      <li>Python, JavaScript (ES6+), HTML5, CSS3, Bootstrap</li>
-      <li>Flask, React, Node.js</li>
-      <li>Git &amp; GitHub</li>
-      <li>Docker &amp; Containerisierung</li>
-      <li>Agiles Projektmanagement (Scrum, Kanban)</li>
-      <li>Linux Server Administration</li>
-    </ul>
-  </div>
-
-  <div id="projects" class="card bg-dark text-light mb-4" tabindex="0">
-    <h2 data-key="projectsTitle">Projekte</h2>
-    <ul data-key="projectsList">
-      <li><a href="https://github.com/deinprofil/deinprojekt" target="_blank">Projektname 1</a> – Kurzbeschreibung</li>
-      <li><a href="https://github.com/deinprofil/anderesprojekt" target="_blank">Projektname 2</a> – Kurzbeschreibung</li>
-      <li><a href="https://deinewebsite.de/demo" target="_blank">Live Demo</a> – Beispiel für Webapp</li>
-    </ul>
-  </div>
-
-  <div id="services" class="card bg-dark text-light mb-4" tabindex="0">
-    <h2 data-key="servicesTitle">Was ich anbiete</h2>
-    <ul data-key="servicesList">
-      <li>Webentwicklung (Frontend & Backend)</li>
-      <li>Softwareentwicklung & Automatisierung</li>
-      <li>Beratung & Support</li>
-      <li>Individuelle IT-Lösungen</li>
-    </ul>
-  </div>
-
-  <div id="experience" class="card bg-dark text-light mb-4" tabindex="0">
-    <h2 data-key="experienceTitle">Erfahrung &amp; Ausbildung</h2>
-    <p data-key="experienceText">Ausbildung zur Fachinformatikerin für Anwendungsentwicklung, diverse Praktika und Freelance-Projekte.</p>
-  </div>
-
-  <div id="contact" class="card bg-dark text-light mb-4" tabindex="0">
-    <h2 data-key="contactTitle">Kontakt</h2>
-    <p data-key="contactEmail">Email: <a href="mailto:deine.email@example.com">deine.email@example.com</a></p>
-    <p data-key="contactLinkedIn">LinkedIn: <a href="https://linkedin.com/in/deinprofil" target="_blank">deinprofil</a></p>
+    <p data-key="aboutText">
+      Ich bin Masa, Fachinformatikerin für Anwendungsentwicklung mit Fokus auf moderne Webtechnologien.
+      Ob Backend mit Flask oder responsive Frontends mit Bootstrap – ich entwickle durchdachte, performante Lösungen.
+      Neben der Technik bringe ich Teamgeist, Eigenverantwortung und eine starke Lernbereitschaft mit.
+    </p>
   </div>
 </main>
 
@@ -170,96 +126,21 @@
   const translations = {
     de: {
       aboutTitle: "Über mich",
-      aboutText: "Hi, ich bin Masa, Fachinformatikerin mit Fokus auf Webentwicklung und IT-Projekte. Ich liebe es, komplexe Probleme zu lösen und innovative Software zu bauen. Ob Job oder Freelancer – ich bringe Skills und Motivation mit.",
-      skillsTitle: "Skills &amp; Tools",
-      skillsList: `
-        <li>Python, JavaScript (ES6+), HTML5, CSS3, Bootstrap</li>
-        <li>Flask, React, Node.js</li>
-        <li>Git &amp; GitHub</li>
-        <li>Docker &amp; Containerisierung</li>
-        <li>Agiles Projektmanagement (Scrum, Kanban)</li>
-        <li>Linux Server Administration</li>
-      `,
-      projectsTitle: "Projekte",
-      projectsList: `
-        <li><a href="https://github.com/deinprofil/deinprojekt" target="_blank">Projektname 1</a> – Kurzbeschreibung</li>
-        <li><a href="https://github.com/deinprofil/anderesprojekt" target="_blank">Projektname 2</a> – Kurzbeschreibung</li>
-        <li><a href="https://deinewebsite.de/demo" target="_blank">Live Demo</a> – Beispiel für Webapp</li>
-      `,
-      servicesTitle: "Was ich anbiete",
-      servicesList: `
-        <li>Webentwicklung (Frontend & Backend)</li>
-        <li>Softwareentwicklung & Automatisierung</li>
-        <li>Beratung & Support</li>
-        <li>Individuelle IT-Lösungen</li>
-      `,
-      experienceTitle: "Erfahrung &amp; Ausbildung",
-      experienceText: "Ausbildung zur Fachinformatikerin für Anwendungsentwicklung, diverse Praktika und Freelance-Projekte.",
-      contactTitle: "Kontakt",
-      contactEmail: 'Email: <a href="mailto:deine.email@example.com">deine.email@example.com</a>',
-      contactLinkedIn: 'LinkedIn: <a href="https://linkedin.com/in/deinprofil" target="_blank">deinprofil</a>'
+      aboutText: `Ich bin Masa, Fachinformatikerin für Anwendungsentwicklung mit Fokus auf moderne Webtechnologien.
+Ob Backend mit Flask oder responsive Frontends mit Bootstrap – ich entwickle durchdachte, performante Lösungen.
+Neben der Technik bringe ich Teamgeist, Eigenverantwortung und eine starke Lernbereitschaft mit.`
     },
     en: {
       aboutTitle: "About me",
-      aboutText: "Hi, I'm Masa, an IT specialist focusing on web development and IT projects. I love solving complex problems and building innovative software. Whether job or freelancer – I bring skills and motivation.",
-      skillsTitle: "Skills & Tools",
-      skillsList: `
-        <li>Python, JavaScript (ES6+), HTML5, CSS3, Bootstrap</li>
-        <li>Flask, React, Node.js</li>
-        <li>Git & GitHub</li>
-        <li>Docker & Containerization</li>
-        <li>Agile project management (Scrum, Kanban)</li>
-        <li>Linux Server Administration</li>
-      `,
-      projectsTitle: "Projects",
-      projectsList: `
-        <li><a href="https://github.com/deinprofil/deinprojekt" target="_blank">Project Name 1</a> – short description</li>
-        <li><a href="https://github.com/deinprofil/anderesprojekt" target="_blank">Project Name 2</a> – short description</li>
-        <li><a href="https://deinewebsite.de/demo" target="_blank">Live Demo</a> – example web app</li>
-      `,
-      servicesTitle: "What I offer",
-      servicesList: `
-        <li>Web development (frontend & backend)</li>
-        <li>Software development & automation</li>
-        <li>Consulting & support</li>
-        <li>Custom IT solutions</li>
-      `,
-      experienceTitle: "Experience & Education",
-      experienceText: "Training as an IT specialist in application development, various internships and freelance projects.",
-      contactTitle: "Contact",
-      contactEmail: 'Email: <a href="mailto:deine.email@example.com">deine.email@example.com</a>',
-      contactLinkedIn: 'LinkedIn: <a href="https://linkedin.com/in/deinprofil" target="_blank">deinprofil</a>'
+      aboutText: `I am Masa, a computer scientist specializing in application development with a focus on modern web technologies.
+Whether backend with Flask or responsive frontends with Bootstrap – I develop thoughtful, high-performance solutions.
+In addition to technical skills, I bring team spirit, self-reliance, and a strong willingness to learn.`
     },
     ar: {
       aboutTitle: "عني",
-      aboutText: "مرحباً، أنا ماسا، أخصائية تقنية المعلومات مع تركيز على تطوير الويب ومشاريع تكنولوجيا المعلومات. أحب حل المشاكل المعقدة وبناء برامج مبتكرة. سواء وظيفة أو عمل حر – أمتلك المهارات والدافع.",
-      skillsTitle: "المهارات والأدوات",
-      skillsList: `
-        <li>بايثون، جافاسكريبت (ES6+)، HTML5، CSS3، Bootstrap</li>
-        <li>فلاسك، React، Node.js</li>
-        <li>Git & GitHub</li>
-        <li>دوكر والحاويات</li>
-        <li>إدارة المشاريع المرنة (سكرم، كانبان)</li>
-        <li>إدارة خوادم لينكس</li>
-      `,
-      projectsTitle: "المشاريع",
-      projectsList: `
-        <li><a href="https://github.com/deinprofil/deinprojekt" target="_blank">المشروع 1</a> – وصف قصير</li>
-        <li><a href="https://github.com/deinprofil/anderesprojekt" target="_blank">المشروع 2</a> – وصف قصير</li>
-        <li><a href="https://deinewebsite.de/demo" target="_blank">عرض حي</a> – مثال على تطبيق ويب</li>
-      `,
-      servicesTitle: "ما أقدمه",
-      servicesList: `
-        <li>تطوير الويب (الواجهة الأمامية والخلفية)</li>
-        <li>تطوير البرامج والأتمتة</li>
-        <li>الاستشارات والدعم</li>
-        <li>حلول تقنية مخصصة</li>
-      `,
-      experienceTitle: "الخبرة والتعليم",
-      experienceText: "تدريب كأخصائية تقنية المعلومات في تطوير التطبيقات، عدة تدريبات ومشاريع عمل حر.",
-      contactTitle: "الاتصال",
-      contactEmail: 'البريد الإلكتروني: <a href="mailto:deine.email@example.com">deine.email@example.com</a>',
-      contactLinkedIn: 'لينكدإن: <a href="https://linkedin.com/in/deinprofil" target="_blank">deinprofil</a>'
+      aboutText: `أنا ماسا، متخصصة في تكنولوجيا المعلومات التطبيقية لتطوير التطبيقات مع التركيز على تقنيات الويب الحديثة.
+سواء كان ذلك عبر الواجهة الخلفية باستخدام Flask أو الواجهات سريعة الاستجابة باستخدام Bootstrap - فأنا أضع حلولًا مدروسة وعالية الأداء.
+إلى جانب التقنية، أحضر روح الفريق والمسؤولية الذاتية والاستعداد القوي للتعلم.`
     }
   };
 
@@ -270,22 +151,10 @@
     document.querySelectorAll('[data-key]').forEach(el => {
       const key = el.getAttribute('data-key');
       if (translations[lang] && translations[lang][key]) {
-        if(el.tagName === 'UL') {
-          el.innerHTML = translations[lang][key];
-        } else {
-          el.innerHTML = translations[lang][key];
-        }
+        el.innerHTML = translations[lang][key];
       }
     });
 
-    document.querySelectorAll('nav .nav-link').forEach(link => {
-      const key = link.getAttribute('data-key');
-      if (translations[lang] && translations[lang][key]) {
-        link.textContent = translations[lang][key];
-      }
-    });
-
-    // Buttons active state
     document.getElementById('deBtn').classList.toggle('active', lang === 'de');
     document.getElementById('enBtn').classList.toggle('active', lang === 'en');
     document.getElementById('arBtn').classList.toggle('active', lang === 'ar');
@@ -295,7 +164,7 @@
   document.getElementById('enBtn').addEventListener('click', () => setLanguage('en'));
   document.getElementById('arBtn').addEventListener('click', () => setLanguage('ar'));
 
-  setLanguage('de'); // default
+  setLanguage('de');
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
