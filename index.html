@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sankar Solutions</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     body {
       background: #121212;
@@ -74,6 +75,131 @@
       box-shadow: 0 0 20px rgba(13,110,253,0.8);
       outline: none;
     }
+
+    /* Flip card styles */
+    #projects > .d-flex {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .flip-card {
+      background: transparent;
+      height: 180px;
+      perspective: 1000px;
+      flex: 1 1 30%;
+      min-width: 250px;
+      border: 1px solid #0d6efd;
+      border-radius: 8px;
+    }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(13,110,253,0.5);
+      background: #1f1f1f;
+      color: #eee;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+    .flip-card.flip .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+    .flip-card-front {
+      background: url('https://www.transparenttextures.com/patterns/asfalt-light.png') repeat;
+      color: #000;
+      font-weight: 600;
+      font-size: 1.2rem;
+      text-align: center;
+      border-radius: 8px 8px 0 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+    .flip-card-front a {
+      color: #ffffff; /* Link schwarz */
+      text-decoration: none;
+      width: 100%;
+      display: block;
+    }
+    .flip-card-front a:hover {
+      text-decoration: underline;
+    }
+    .flip-card-back {
+      background: #1f1f1f; /* dunkel */
+      color: #eee; /* weiß */
+      font-size: 1rem;
+      text-align: center;
+      border-radius: 0 0 8px 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      transform: rotateY(180deg);
+    }
+
+    /* Was ich anbiete Styles */
+    #services {
+      max-width: 900px;
+      margin: 0 auto 2rem;
+      text-align: center;
+    }
+    #services h2 {
+      margin-bottom: 1rem;
+    }
+    .row-services {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .service-item {
+      flex: 1 1 150px;
+      max-width: 200px;
+      background: #1f1f1f;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(13,110,253,0.5);
+      color: #eee;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      cursor: default;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .service-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(13,110,253,0.8);
+    }
+    .service-item i {
+      font-size: 2.5rem;
+      color: #fff;
+    }
+    .service-item p {
+      margin: 0;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
     footer {
       text-align: center;
       color: #aaa;
@@ -93,6 +219,10 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link active" href="#about" data-key="aboutTitle">Über mich</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills" data-key="skillsTitle">Fähigkeiten & Tools</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects" data-key="projectsTitle">Projekte</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services" data-key="servicesTitle">Was ich anbiete</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact" data-key="contactTitle">Kontakt</a></li>
       </ul>
     </div>
   </div>
@@ -108,6 +238,8 @@
 </header>
 
 <main class="container d-flex flex-column align-items-center">
+
+  <!-- Über mich -->
   <div id="about" class="card bg-dark text-light mb-4" tabindex="0">
     <h2 data-key="aboutTitle">Über mich</h2>
     <p data-key="aboutText">
@@ -116,6 +248,93 @@
       Neben der Technik bringe ich Teamgeist, Eigenverantwortung und eine starke Lernbereitschaft mit.
     </p>
   </div>
+
+  <!-- Skills & Tools -->
+  <div id="skills" class="card bg-dark text-light mb-4" tabindex="0">
+    <h2 data-key="skillsTitle">Fähigkeiten & Tools</h2>
+    <div class="row text-center mt-4">
+      <div class="col-6 col-md-3 mb-3"><i class="fab fa-python fa-2x mb-2"></i><div>Python</div></div>
+      <div class="col-6 col-md-3 mb-3"><i class="fab fa-js-square fa-2x mb-2"></i><div>JavaScript (ES6+)</div></div>
+      <div class="col-6 col-md-3 mb-3"><i class="fab fa-html5 fa-2x mb-2"></i><div>HTML5 & CSS3</div></div>
+      <div class="col-6 col-md-3 mb-3"><i class="fas fa-code fa-2x mb-2"></i><div>Flask & REST APIs</div></div>
+      <div class="col-6 col-md-3 mb-3"><i class="fab fa-git-alt fa-2x mb-2"></i><div>Git & GitHub</div></div>
+      <div class="col-6 col-md-3 mb-3"><i class="fab fa-docker fa-2x mb-2"></i><div>Docker & Server</div></div>
+      <div class="col-6 col-md-3 mb-3"><i class="fas fa-project-diagram fa-2x mb-2"></i><div>Projektmanagement</div></div>
+    </div>
+  </div>
+
+  <!-- Projekte mit Flip Cards -->
+  <div id="projects" class="card bg-dark text-light" tabindex="0">
+    <h2 data-key="projectsTitle">Projekte</h2>
+    <div class="d-flex justify-content-between flex-wrap mt-3 gap-3">
+      <div class="flip-card" tabindex="0">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <a href="#" target="_blank" data-key="project1Title">Projektmanagement-Tool</a>
+          </div>
+          <div class="flip-card-back">
+            <span data-key="project1Desc">Webanwendung mit Flask & React für effiziente Teamarbeit.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" tabindex="0">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <a href="#" target="_blank" data-key="project2Title">Fitness-Tracker</a>
+          </div>
+          <div class="flip-card-back">
+            <span data-key="project2Desc">Responsive App zur Überwachung von Trainingsdaten.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" tabindex="0">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <a href="#" target="_blank" data-key="project3Title">Portfolio-Webseite</a>
+          </div>
+          <div class="flip-card-back">
+            <span data-key="project3Desc">Persönliches Website-Projekt mit Bootstrap & JavaScript.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Was ich anbiete -->
+  <div id="services" tabindex="0">
+    <h2 data-key="servicesTitle">Was ich anbiete</h2>
+    <div class="row-services">
+      <div class="service-item">
+        <i class="fas fa-paint-brush"></i>
+        <p data-key="service1">Individuelle Webentwicklung & Beratung</p>
+      </div>
+      <div class="service-item">
+        <i class="fas fa-laptop-code"></i>
+        <p data-key="service2">Frontend- & Backend-Entwicklung</p>
+      </div>
+      <div class="service-item">
+        <i class="fas fa-tools"></i>
+        <p data-key="service3">Optimierung und Wartung bestehender Anwendungen</p>
+      </div>
+      <div class="service-item">
+        <i class="fas fa-file-alt"></i>
+        <p data-key="service4">Technische Dokumentation und Schulungen</p>
+      </div>
+      <div class="service-item">
+        <i class="fas fa-handshake"></i>
+        <p data-key="service5">Freelancer-Projekte mit transparenter Kommunikation</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Kontakt (Platzhalter, bearbeiten wir später) -->
+  <div id="contact" class="card bg-dark text-light mb-4" tabindex="0">
+    <h2 data-key="contactTitle">Kontakt</h2>
+    <p data-key="contactText">Hier kannst du später deine Kontaktinfos oder ein Kontaktformular einbauen.</p>
+  </div>
+
 </main>
 
 <footer class="text-center text-muted py-3">
@@ -128,43 +347,106 @@
       aboutTitle: "Über mich",
       aboutText: `Ich bin Masa, Fachinformatikerin für Anwendungsentwicklung mit Fokus auf moderne Webtechnologien.
 Ob Backend mit Flask oder responsive Frontends mit Bootstrap – ich entwickle durchdachte, performante Lösungen.
-Neben der Technik bringe ich Teamgeist, Eigenverantwortung und eine starke Lernbereitschaft mit.`
+Neben der Technik bringe ich Teamgeist, Eigenverantwortung und eine starke Lernbereitschaft mit.`,
+      skillsTitle: "Fähigkeiten & Tools",
+      projectsTitle: "Projekte",
+      project1Title: "Projektmanagement-Tool",
+      project1Desc: "Webanwendung mit Flask & React für effiziente Teamarbeit.",
+      project2Title: "Fitness-Tracker",
+      project2Desc: "Responsive App zur Überwachung von Trainingsdaten.",
+      project3Title: "Portfolio-Webseite",
+      project3Desc: "Persönliches Website-Projekt mit Bootstrap & JavaScript.",
+      servicesTitle: "Was ich anbiete",
+      service1: "Individuelle Webentwicklung & Beratung",
+      service2: "Frontend- & Backend-Entwicklung",
+      service3: "Optimierung und Wartung bestehender Anwendungen",
+      service4: "Technische Dokumentation und Schulungen",
+      service5: "Freelancer-Projekte mit transparenter Kommunikation",
+      contactTitle: "Kontakt",
+      contactText: "Hier kannst du später deine Kontaktinfos oder ein Kontaktformular einbauen."
     },
     en: {
       aboutTitle: "About me",
       aboutText: `I am Masa, a computer scientist specializing in application development with a focus on modern web technologies.
 Whether backend with Flask or responsive frontends with Bootstrap – I develop thoughtful, high-performance solutions.
-In addition to technical skills, I bring team spirit, self-reliance, and a strong willingness to learn.`
+In addition to technical skills, I bring team spirit, self-reliance, and a strong willingness to learn.`,
+      skillsTitle: "Skills & Tools",
+      projectsTitle: "Projects",
+      project1Title: "Project Management Tool",
+      project1Desc: "Web app built with Flask & React to support efficient team collaboration.",
+      project2Title: "Fitness Tracker",
+      project2Desc: "Responsive app to track workouts and visualize training data.",
+      project3Title: "Portfolio Website",
+      project3Desc: "Personal website project using Bootstrap & JavaScript.",
+      servicesTitle: "What I offer",
+      service1: "Custom web development & consulting",
+      service2: "Frontend & backend development",
+      service3: "Optimization and maintenance of existing applications",
+      service4: "Technical documentation and training",
+      service5: "Freelance projects with transparent communication",
+      contactTitle: "Contact",
+      contactText: "You can add your contact info or a contact form here later."
     },
     ar: {
       aboutTitle: "عني",
       aboutText: `أنا ماسا، متخصصة في تكنولوجيا المعلومات التطبيقية لتطوير التطبيقات مع التركيز على تقنيات الويب الحديثة.
 سواء كان ذلك عبر الواجهة الخلفية باستخدام Flask أو الواجهات سريعة الاستجابة باستخدام Bootstrap - فأنا أضع حلولًا مدروسة وعالية الأداء.
-إلى جانب التقنية، أحضر روح الفريق والمسؤولية الذاتية والاستعداد القوي للتعلم.`
+إلى جانب التقنية، أحضر روح الفريق والمسؤولية الذاتية والاستعداد القوي للتعلم.`,
+      skillsTitle: "المهارات والأدوات",
+      projectsTitle: "المشاريع",
+      project1Title: "أداة إدارة المشاريع",
+      project1Desc: "تطبيق ويب باستخدام Flask و React لدعم العمل الجماعي بكفاءة.",
+      project2Title: "متتبع اللياقة",
+      project2Desc: "تطبيق متجاوب لمتابعة التمارين وعرض بيانات التدريب.",
+      project3Title: "موقع بورتفوليو شخصي",
+      project3Desc: "مشروع موقع شخصي باستخدام Bootstrap و JavaScript.",
+      servicesTitle: "ما أقدّمه",
+      service1: "تطوير مواقع مخصص واستشارات تقنية",
+      service2: "تطوير الواجهة الأمامية والخلفية",
+      service3: "تحسين وصيانة التطبيقات الحالية",
+      service4: "توثيق تقني وتقديم تدريبات",
+      service5: "مشاريع حرة بتواصل واضح وشفاف",
+      contactTitle: "تواصل",
+      contactText: "يمكنك إضافة معلومات الاتصال أو نموذج اتصال هنا لاحقًا."
     }
   };
 
   function setLanguage(lang) {
-    document.documentElement.lang = lang;
-    document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.body.dir = (lang === 'ar') ? 'rtl' : 'ltr';
 
-    document.querySelectorAll('[data-key]').forEach(el => {
-      const key = el.getAttribute('data-key');
-      if (translations[lang] && translations[lang][key]) {
-        el.innerHTML = translations[lang][key];
+    document.querySelectorAll("[data-key]").forEach(el => {
+      const key = el.getAttribute("data-key");
+      if (translations[lang][key]) {
+        el.textContent = translations[lang][key];
       }
     });
 
-    document.getElementById('deBtn').classList.toggle('active', lang === 'de');
-    document.getElementById('enBtn').classList.toggle('active', lang === 'en');
-    document.getElementById('arBtn').classList.toggle('active', lang === 'ar');
+    // Switch active button style
+    document.getElementById("deBtn").classList.toggle("active", lang === "de");
+    document.getElementById("enBtn").classList.toggle("active", lang === "en");
+    document.getElementById("arBtn").classList.toggle("active", lang === "ar");
   }
 
-  document.getElementById('deBtn').addEventListener('click', () => setLanguage('de'));
-  document.getElementById('enBtn').addEventListener('click', () => setLanguage('en'));
-  document.getElementById('arBtn').addEventListener('click', () => setLanguage('ar'));
+  document.getElementById("deBtn").addEventListener("click", () => setLanguage("de"));
+  document.getElementById("enBtn").addEventListener("click", () => setLanguage("en"));
+  document.getElementById("arBtn").addEventListener("click", () => setLanguage("ar"));
 
-  setLanguage('de');
+  // Flip card toggle on click
+  document.querySelectorAll('.flip-card').forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('flip');
+    });
+    // Optional: toggle flip with keyboard (enter/space)
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        card.classList.toggle('flip');
+      }
+    });
+  });
+
+  // Initial language set
+  setLanguage("de");
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
