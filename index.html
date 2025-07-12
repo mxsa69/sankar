@@ -330,15 +330,22 @@
   </div>
 
   <!-- Kontakt (Platzhalter, bearbeiten wir später) -->
-  <div id="contact" class="card bg-dark text-light mb-4" tabindex="0">
-    <h2 data-key="contactTitle">Kontakt</h2>
-    <p data-key="contactText">Hier kannst du später deine Kontaktinfos oder ein Kontaktformular einbauen.</p>
-  </div>
+<!-- Kontakt -->
+<div id="contact" class="card bg-dark text-light mb-4" tabindex="0">
+  <h2 data-key="contactTitle">Kontakt</h2>
+  <p><strong>E-Mail:</strong> <a href="mailto:sankarsolutions.info@gmail.com">sankarsolutions.info@gmail.com</a></p>
+  <p><strong data-key="phoneLabel">Telefon:</strong> <a href="tel:+4917687332379">+49 176 87332379</a></p>
+</div>
+
 
 </main>
 
 <footer class="text-center text-muted py-3">
   <p>© 2025 Sankar Solutions</p>
+  <p>
+    <a href="impressum.html" class="text-decoration-none text-light me-3" data-key="footerImprint">Impressum</a>
+    <a href="datenschutz.html" class="text-decoration-none text-light" data-key="footerPrivacy">Datenschutz</a>
+  </p>
 </footer>
 
 <script>
@@ -363,7 +370,10 @@ Neben der Technik bringe ich Teamgeist, Eigenverantwortung und eine starke Lernb
       service4: "Technische Dokumentation und Schulungen",
       service5: "Freelancer-Projekte mit transparenter Kommunikation",
       contactTitle: "Kontakt",
-      contactText: "Hier kannst du später deine Kontaktinfos oder ein Kontaktformular einbauen."
+      contactText: "Hier kannst du später deine Kontaktinfos oder ein Kontaktformular einbauen.",
+      phoneLabel: "Telefon",
+      footerImprint: "Impressum",
+      footerPrivacy: "Datenschutz"
     },
     en: {
       aboutTitle: "About me",
@@ -385,7 +395,10 @@ In addition to technical skills, I bring team spirit, self-reliance, and a stron
       service4: "Technical documentation and training",
       service5: "Freelance projects with transparent communication",
       contactTitle: "Contact",
-      contactText: "You can add your contact info or a contact form here later."
+      contactText: "You can add your contact info or a contact form here later.",
+      phoneLabel: "Phone",
+      footerImprint: "Imprint",
+      footerPrivacy: "Privacy Policy"
     },
     ar: {
       aboutTitle: "عني",
@@ -407,7 +420,10 @@ In addition to technical skills, I bring team spirit, self-reliance, and a stron
       service4: "توثيق تقني وتقديم تدريبات",
       service5: "مشاريع حرة بتواصل واضح وشفاف",
       contactTitle: "تواصل",
-      contactText: "يمكنك إضافة معلومات الاتصال أو نموذج اتصال هنا لاحقًا."
+      contactText: "يمكنك إضافة معلومات الاتصال أو نموذج اتصال هنا لاحقًا.",
+      phoneLabel: "الهاتف",
+      footerImprint: "البيانات القانونية",
+      footerPrivacy: "سياسة الخصوصية"
     }
   };
 
@@ -421,7 +437,6 @@ In addition to technical skills, I bring team spirit, self-reliance, and a stron
       }
     });
 
-    // Switch active button style
     document.getElementById("deBtn").classList.toggle("active", lang === "de");
     document.getElementById("enBtn").classList.toggle("active", lang === "en");
     document.getElementById("arBtn").classList.toggle("active", lang === "ar");
@@ -431,12 +446,10 @@ In addition to technical skills, I bring team spirit, self-reliance, and a stron
   document.getElementById("enBtn").addEventListener("click", () => setLanguage("en"));
   document.getElementById("arBtn").addEventListener("click", () => setLanguage("ar"));
 
-  // Flip card toggle on click
   document.querySelectorAll('.flip-card').forEach(card => {
     card.addEventListener('click', () => {
       card.classList.toggle('flip');
     });
-    // Optional: toggle flip with keyboard (enter/space)
     card.addEventListener('keydown', e => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
@@ -445,9 +458,9 @@ In addition to technical skills, I bring team spirit, self-reliance, and a stron
     });
   });
 
-  // Initial language set
   setLanguage("de");
 </script>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
